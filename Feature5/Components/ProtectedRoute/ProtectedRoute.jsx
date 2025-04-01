@@ -12,11 +12,7 @@ const ProtectedRoute = ({ element: Component, ...rest }) => {
   if (checkUser()) {
     return <Component />;
   } else {
-    return (
-      <div>
-        <p>Unauthorized!</p> <button onClick={goBackHandler}>Go Back.</button>
-      </div>
-    );
+      navigate("/auth");
   }
 };
 

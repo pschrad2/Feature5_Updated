@@ -1,11 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import React, { useEffect } from "react";
-import Components from "../Components/Components";
-//import * as Env from "./environments";
+import React from "react";
 import Parse from "parse";
+import Components from "../Components/Components";
 
 
 
@@ -52,8 +48,8 @@ Parse.serverURL = Env.SERVER_URL;
 console.log(" Parse initialized");
 function App() {
   //const [count, setCount] = useState(0)
-  const [users, setUsers] = useState([]);
-  console.log("text printed");
+  //const [users, setUsers] = useState([]);
+  //console.log("text printed");
   
   return <Components/>;
   

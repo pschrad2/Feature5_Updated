@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { createUser } from "./AuthService";
+import { createUser, checkUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
 
@@ -17,13 +17,13 @@ const AuthRegister = () => {
   const [add, setAdd] = useState(false);
 
   // redirect already authenticated users back to home
-  /*useEffect(() => {
+  useEffect(() => {
     if (checkUser()) {
       alert("You are already logged in");
       navigate("/");
     }
   }, [navigate]);
-*/
+
   // useEffect that run when changes are made to the state variable flags
   useEffect(() => {
     // checkUser() ? history.push("/home"): null;
