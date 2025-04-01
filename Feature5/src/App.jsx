@@ -5,7 +5,7 @@ import './App.css'
 import React, { useEffect } from "react";
 import Components from "../Components/Components";
 //import * as Env from "./environments";
-import Parse from "parse/dist/parse.min.js";
+import Parse from "parse";
 
 
 
