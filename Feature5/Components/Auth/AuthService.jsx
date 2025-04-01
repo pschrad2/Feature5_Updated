@@ -21,7 +21,7 @@ export const createUser = (newUser) => {
     });
 };
 
-/* used in auth login component
+// used in auth login component
 export const loginUser = (currUser) => {
   const user = new Parse.User();
 // sign up is async... 
@@ -42,4 +42,4 @@ export const loginUser = (currUser) => {
 
 export const checkUser = () => {
   return Parse.User.current()?.authenticated;
-};*/
+};

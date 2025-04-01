@@ -9,8 +9,8 @@ import {
 } from "react-router-dom";
 import AuthModule from "../Components/Auth/Auth.jsx";
 import AuthRegister from "../Components/Auth/AuthRegister.jsx";
-/*import AuthLogin from "../Components/Auth/AuthLogin.jsx";
-import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute.jsx";
+import AuthLogin from "../Components/Auth/AuthLogin.jsx";
+/*import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute.jsx";
 import MainList from "../Components/Main/MainList.jsx";
 */
 
@@ -52,7 +52,7 @@ export default function Components() {
         <Routes>
           <Route path="/auth" element={<AuthModule />} />
           <Route path="/auth/register" element={<AuthRegister />} />
-          
+          <Route path="/auth/login" element={<AuthLogin/>}/>
           
           <Route path="*" element={<Navigate to="/auth" replace />} />
         </Routes>
