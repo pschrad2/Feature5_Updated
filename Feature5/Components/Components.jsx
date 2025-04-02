@@ -10,6 +10,7 @@ import {
 import AuthModule from "../Components/Auth/Auth.jsx";
 import AuthRegister from "../Components/Auth/AuthRegister.jsx";
 import AuthLogin from "../Components/Auth/AuthLogin.jsx";
+import AuthLoggedin from "../Components/Auth/AuthLoggedin.jsx";
 /*import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute.jsx";
 import MainList from "../Components/Main/MainList.jsx";
 */
@@ -34,7 +35,7 @@ export default function Components() {
       <div>
         <h1>Hello, Parse!!</h1>
         <img
-          src="https://media.licdn.com/dms/image/v2/D4D03AQE6OKACUrsJWQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1694319042190?e=1749081600&v=beta&t=uA7ykLo9Hf_2725fNxQOTeg4ya7Qn8T-Xd8_Zk_MSnc"
+          src="https://pigment.github.io/fake-logos/logos/large/color/fast-banana.png"
           alt="Description of the image"
           width="300"
         />
@@ -53,7 +54,7 @@ export default function Components() {
           <Route path="/auth" element={<AuthModule />} />
           <Route path="/auth/register" element={<AuthRegister />} />
           <Route path="/auth/login" element={<AuthLogin/>}/>
-          
+          <Route path="/auth/loggedin" element={<AuthLoggedin/>}/>
           <Route path="*" element={<Navigate to="/auth" replace />} />
         </Routes>
       </div>
