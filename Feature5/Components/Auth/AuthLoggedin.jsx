@@ -1,6 +1,23 @@
 import React from "react";
+import Parse from "parse";
+import { useNavigate } from "react-router-dom";
+
 
 const AuthLoggedin = ({ user, isLogin, onChange, onSubmit }) => {
+  const navigate = useNavigate(); 
+
+   // Sign out the user
+   const handleSignOut = () => {
+    Parse.User.logOut().then(() => {
+      // After logout, navigate to the login page
+      alert("You have been logged out.");
+      navigate("/auth/login");
+    }).catch((error) => {
+      alert("Error logging out: " + error.message);
+    });
+  };
+
+
 
   return (
     <div className="container">
@@ -10,6 +27,7 @@ const AuthLoggedin = ({ user, isLogin, onChange, onSubmit }) => {
       </header>
       
       <main className="main-content">
+      <button onClick={handleFetchUsers}>Get All Users</button>
         <section className="section">
           <h2>Why Simple Pages Matter</h2>
           <p>
@@ -24,6 +42,11 @@ const AuthLoggedin = ({ user, isLogin, onChange, onSubmit }) => {
             <li>Typography plays an important role in guiding the reader’s eye.</li>
             <li>A limited color palette keeps the design cohesive.</li>
           </ul>
+        </section>
+
+         {/* Sign Out Button */}
+         <section className="section">
+          <button onClick={handleSignOut}>Sign Out</button>
         </section>
       </main>
 

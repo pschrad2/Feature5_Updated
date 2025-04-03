@@ -11,24 +11,23 @@ import AuthModule from "../Components/Auth/Auth.jsx";
 import AuthRegister from "../Components/Auth/AuthRegister.jsx";
 import AuthLogin from "../Components/Auth/AuthLogin.jsx";
 import AuthLoggedin from "../Components/Auth/AuthLoggedin.jsx";
-/*import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute.jsx";
-import MainList from "../Components/Main/MainList.jsx";
+import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute.jsx";
+/*import MainList from "../Components/Main/MainList.jsx";
 */
 
 import {getAllUsers} from "../Common/LearnServices"
 
-
 export default function Components() {
 
-     const [users, setUsers] = useState([]);
-      console.log("text printed");
-     // Handle button click
-  const handleFetchUsers = () => {
-    getAllUsers().then((results) => {
-      console.log(" Users:", results);
-      setUsers(results); // store in state to display
-      //createUser("janedoe", "securepassword123", "janedoe@example.com");
-    });
+  const [users, setUsers] = useState([]);
+  
+    // Handle button click for Get All Users
+    const handleFetchUsers = () => {
+      getAllUsers().then((results) => {
+        console.log(" Users:", results);
+        setUsers(results); // store in state to display
+        
+      });
   };
   return (
     <Router>
@@ -54,7 +53,10 @@ export default function Components() {
           <Route path="/auth" element={<AuthModule />} />
           <Route path="/auth/register" element={<AuthRegister />} />
           <Route path="/auth/login" element={<AuthLogin/>}/>
-          <Route path="/auth/loggedin" element={<AuthLoggedin/>}/>
+          <Route
+            path="/auth/loggedin"
+            element={<ProtectedRoute element={AuthLoggedin} />}
+          />
           <Route path="*" element={<Navigate to="/auth" replace />} />
         </Routes>
       </div>
